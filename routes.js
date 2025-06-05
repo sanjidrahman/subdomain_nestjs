@@ -8,6 +8,10 @@ const templateService = require('./templateService');
 const router = express.Router();
 const MAIN_DOMAIN = process.env.MAIN_DOMAIN || 'myoutlet.app';
 
+router.get('/', (req, res) => {
+  res.send('Welcome to MyStore API! Use /api/system/status for system info.');
+});
+
 // System status endpoint
 router.get('/api/system/status', (req, res) => {
   res.json({
